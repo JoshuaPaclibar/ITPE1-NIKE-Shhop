@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Nike</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .account-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+        
+        .account-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .account-tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .account-tab.active {
+            border-bottom: 2px solid #007bff;
+            color: #007bff;
+        }
+        
+        .account-content {
+            display: none;
+        }
+        
+        .account-content.active {
+            display: block;
+        }
+        
+        .profile-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .order-history {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .order-history th,
+        .order-history td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .order-history th {
+            background-color: #f8f9fa;
+        }
+        
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="nike-logo.png" alt="Nike Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="sale.html">Sale</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="account-container">
+        <h1>My Account</h1>
+        
+        <div class="account-tabs">
+            <div class="account-tab active" data-tab="profile">Profile</div>
+            <div class="account-tab" data-tab="orders">Orders</div>
+            <div class="account-tab" data-tab="wishlist">Wishlist</div>
+            <div class="account-tab" data-tab="settings">Settings</div>
+        </div>
+        
+        <div class="account-content active" id="profile">
+            <div class="profile-form">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <button class="btn" onclick="updateProfile()">Save Changes</button>
+            </div>
+        </div>
+        
+        <div class="account-content" id="orders">
+            <table class="order-history">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="orderHistory">
+                    <!-- Orders will be loaded dynamically -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="account-content" id="wishlist">
+            <div class="wishlist-grid" id="wishlistItems">
+                <!-- Wishlist items will be loaded dynamically -->
+            </div>
+        </div>
+        
+        <div class="account-content" id="settings">
+            <div class="profile-form">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" placeholder="Enter current password">
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                </div>
+                <button class="btn" onclick="updatePassword()">Update Password</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Find a Store</h3>
+                <p>Become a Member</p>
+                <p>Send Us Feedback</p>
+            </div>
+            <div class="footer-section">
+                <h3>Get Help</h3>
+                <p>Order Status</p>
+                <p>Shipping & Delivery</p>
+                <p>Returns</p>
+            </div>
+            <div class="footer-section">
+                <h3>About Nike</h3>
+                <p>News</p>
+                <p>Careers</p>
+                <p>Investors</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nike, Inc. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="account.js"></script>
+</body>
+</html> 

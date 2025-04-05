@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Nike</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .search-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+        
+        .search-box {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .search-button {
+            padding: 1rem 2rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .search-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .search-results {
+            margin-top: 2rem;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 4rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="nike-logo.png" alt="Nike Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="sale.html">Sale</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="search-container">
+        <h1>Search Products</h1>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for products...">
+            <button class="search-button" onclick="searchProducts()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div class="search-filters">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="kids">Kids</option>
+                <option value="accessories">Accessories</option>
+            </select>
+            
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="0-50">$0 - $50</option>
+                <option value="50-100">$50 - $100</option>
+                <option value="100-150">$100 - $150</option>
+                <option value="150+">$150+</option>
+            </select>
+        </div>
+        
+        <div class="search-results" id="searchResults">
+            <!-- Search results will be loaded dynamically -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Find a Store</h3>
+                <p>Become a Member</p>
+                <p>Send Us Feedback</p>
+            </div>
+            <div class="footer-section">
+                <h3>Get Help</h3>
+                <p>Order Status</p>
+                <p>Shipping & Delivery</p>
+                <p>Returns</p>
+            </div>
+            <div class="footer-section">
+                <h3>About Nike</h3>
+                <p>News</p>
+                <p>Careers</p>
+                <p>Investors</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nike, Inc. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="search.js"></script>
+</body>
+</html> 

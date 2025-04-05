@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Nike</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="nike-logo.png" alt="Nike Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount"></span>
+                </a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Your Cart</h1>
+        <div class="cart-container">
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div id="cartTotal" class="cart-total">
+                <!-- Cart total will be loaded here -->
+            </div>
+        </div>
+        <div class="cart-actions">
+            <a href="index.html" class="btn btn-secondary">Continue Shopping</a>
+            <button onclick="checkout()" class="btn">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Store</h3>
+                <ul>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About Nike</h3>
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nike, Inc. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCartItems();
+            updateCartCount();
+        });
+
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                showNotification('Your cart is empty', 'error');
+                return;
+            }
+            // Redirect to checkout page or show checkout form
+            showNotification('Proceeding to checkout...');
+        }
+    </script>
+</body>
+</html> 

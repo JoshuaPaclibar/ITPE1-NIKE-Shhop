@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories - Nike</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="nike-logo.png" alt="Nike Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section class="category-header">
+            <h1>Accessories</h1>
+            <div class="filters">
+                <select id="sortBy">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest</option>
+                </select>
+                <select id="filterBy">
+                    <option value="all">All Accessories</option>
+                    <option value="bags">Bags</option>
+                    <option value="hats">Hats</option>
+                    <option value="socks">Socks</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="product-grid" id="accessoriesProducts">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Find a Store</h3>
+                <p>Become a Member</p>
+                <p>Send Us Feedback</p>
+            </div>
+            <div class="footer-section">
+                <h3>Get Help</h3>
+                <p>Order Status</p>
+                <p>Shipping & Delivery</p>
+                <p>Returns</p>
+            </div>
+            <div class="footer-section">
+                <h3>About Nike</h3>
+                <p>News</p>
+                <p>Careers</p>
+                <p>Investors</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nike, Inc. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="accessories.js"></script>
+</body>
+</html> 
